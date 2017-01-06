@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {firebaseConfig} from "../environments/firebase.config";
+import {AngularFireModule} from "angularfire2/index";
 
 @NgModule({
   declarations: [
@@ -11,6 +13,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     FormsModule,
     HttpModule
   ],

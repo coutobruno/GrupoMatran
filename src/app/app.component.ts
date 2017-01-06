@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {initializeApp, database} from 'firebase';
+import {firebaseConfig} from '../environments/firebase.config';
+import {AngularFire} from "angularfire2";
 
 @Component({
   selector: 'app-root',
@@ -9,10 +11,8 @@ import {initializeApp, database} from 'firebase';
 export class AppComponent {
   title = 'app works fine!';
 
-  constructor() {
+  constructor(private af: AngularFire) {
 
-
-    initializeApp(config);
-
+    
   }
 }
