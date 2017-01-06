@@ -14,6 +14,8 @@ export class AppComponent {
   publishers$:FirebaseListObservable<any>;
   reports$:FirebaseObjectObservable<any>;
 
+  firstPublisher:any;
+
   constructor(private af: AngularFire) {
 
     this.publishers$ = af.database.list('publishers');
@@ -23,6 +25,11 @@ export class AppComponent {
     this.reports$ = af.database.object('reports/-K_nBy_7UpL11GtYmzxt');
 
     this.reports$.subscribe(console.log);
+
+    this.publishers$.map(publishers => publishers[0])
+        .subscribe(
+          publisher => this.firstPublisher = publisher
+        );
 
   }
 

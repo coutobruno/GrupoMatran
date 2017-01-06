@@ -17,7 +17,7 @@ import {AngularFireModule} from "angularfire2/index";
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [FieldServiceReports],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
