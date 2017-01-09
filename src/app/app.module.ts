@@ -4,20 +4,26 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import {firebaseConfig} from "../environments/firebase.config";
-import {AngularFireModule} from "angularfire2/index";
+import { firebaseConfig } from "../environments/firebase.config";
+import { AngularFireModule } from "angularfire2/index";
+import { HomeComponent } from './home/home.component';
+import { MaterialModule } from '@angular/material';
+
+import 'hammerjs';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
     FormsModule,
-    HttpModule
+    HttpModule,
+    MaterialModule.forRoot()
   ],
-  providers: [FieldServiceReports],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

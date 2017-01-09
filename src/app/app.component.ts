@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {initializeApp, database} from 'firebase';
 import {firebaseConfig} from '../environments/firebase.config';
+import {Observable} from "rxjs/Rx";
 import {AngularFire, FirebaseListObservable, FirebaseObjectObservable} from "angularfire2";
 
 @Component({
@@ -22,19 +23,31 @@ export class AppComponent {
 
     this.publishers$.subscribe(console.log);
 
-    this.reports$ = af.database.object('reports/-K_nBy_7UpL11GtYmzxt');
+    this.reports$ = af.database.object('fieldServiceReports/-K_nBy_7UpL11GtYmzxt');
 
     this.reports$.subscribe(console.log);
-
-    this.publishers$.map(publishers => publishers[0])
-        .subscribe(
-          publisher => this.firstPublisher = publisher
-        );
 
   }
 
   listPush() {
 
-    this.publishers$.push({firstName: 'TEST'});
+    //this.publishers$.push({firstName: 'TEST'});
+  }
+
+  listRemove() {
+
+    //this.publishers$.remove(this.firstPublisher);
+
+  }
+
+  listUpdate() {
+
+    //this.publishers$.update(this.firstPublisher, {firstName: 'TEST'});
+
+  }
+
+  objUpdate() {
+
+    //this.reports$.update({comments: ''});
   }
 }
