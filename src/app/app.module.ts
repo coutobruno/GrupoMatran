@@ -9,6 +9,7 @@ import { AngularFireModule } from "angularfire2/index";
 import { HomeComponent } from './home/home.component';
 import { MaterialModule } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FieldServiceReport } from './shared/model/field-service-reports.service';
 
 import 'hammerjs';
 
@@ -25,7 +26,7 @@ import 'hammerjs';
     MaterialModule.forRoot(),
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [FieldServiceReport],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
