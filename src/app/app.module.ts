@@ -8,6 +8,7 @@ import { firebaseConfig } from "../environments/firebase.config";
 import { AngularFireModule } from "angularfire2/index";
 import { HomeComponent } from './home/home.component';
 import { MaterialModule } from '@angular/material';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import 'hammerjs';
 
@@ -21,7 +22,8 @@ import 'hammerjs';
     AngularFireModule.initializeApp(firebaseConfig),
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
