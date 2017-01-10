@@ -51,3 +51,18 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<h2>Todos os relatórios</h2>
+
+<h4>Quantidade de relatórios: {{fieldServiceReports?.length}}</h4>
+
+<input placeholder="Busca">
+
+<table>
+  <tbody>
+    <tr *ngFor="let fieldServiceReport of fieldServiceReports">
+      <td>{{fieldServiceReport.reportMonthYear}}</td>
+      <td>{{fieldServiceReport.hours}}</td>
+    </tr>
+  </tbody>
+</table>

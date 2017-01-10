@@ -9,7 +9,8 @@ import { AngularFireModule } from "angularfire2/index";
 import { HomeComponent } from './home/home.component';
 import { FieldServiceReportsService } from './shared/model/field-service-reports.service';
 
-import 'hammerjs';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
 
 @NgModule({
   declarations: [
