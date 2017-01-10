@@ -7,9 +7,7 @@ import { AppComponent } from './app.component';
 import { firebaseConfig } from "../environments/firebase.config";
 import { AngularFireModule } from "angularfire2/index";
 import { HomeComponent } from './home/home.component';
-import { MaterialModule } from '@angular/material';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FieldServiceReport } from './shared/model/field-service-reports.service';
+import { FieldServiceReportsService } from './shared/model/field-service-reports.service';
 
 import 'hammerjs';
 
@@ -22,11 +20,9 @@ import 'hammerjs';
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
     FormsModule,
-    HttpModule,
-    MaterialModule.forRoot(),
-    NgbModule.forRoot()
+    HttpModule
   ],
-  providers: [FieldServiceReport],
+  providers: [FieldServiceReportsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
