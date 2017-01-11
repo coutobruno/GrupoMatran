@@ -58,11 +58,4 @@
 
 <input placeholder="Busca">
 
-<table>
-  <tbody>
-    <tr *ngFor="let fieldServiceReport of fieldServiceReports">
-      <td>{{fieldServiceReport.reportMonthYear}}</td>
-      <td>{{fieldServiceReport.hours}}</td>
-    </tr>
-  </tbody>
-</table>
+<fieldServiceReports-list [fieldServiceReports]="fieldServiceReports"></fieldServiceReports-list>

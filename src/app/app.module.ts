@@ -11,11 +11,13 @@ import { FieldServiceReportsService } from './shared/model/field-service-reports
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
+import { FieldServiceReportsListComponent } from './field-service-reports-list/field-service-reports-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    FieldServiceReportsListComponent
   ],
   imports: [
     BrowserModule,
