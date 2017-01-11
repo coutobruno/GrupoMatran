@@ -10,7 +10,7 @@ export class FieldServiceReportsService {
 
   findAllFieldServiceReports(): Observable<FieldServiceReport[]> {
     
-    return this.af.database.list('fieldServiceReports');
+    return this.af.database.list('fieldServiceReports').map(FieldServiceReport.fromJsonArray);
   }
 
 }

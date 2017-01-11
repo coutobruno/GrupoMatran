@@ -10,44 +10,5 @@ import {AngularFire, FirebaseListObservable, FirebaseObjectObservable} from "ang
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works fine!';
 
-  publishers$:FirebaseListObservable<any>;
-  reports$:FirebaseObjectObservable<any>;
-
-  firstPublisher:any;
-
-  constructor(private af: AngularFire) {
-
-    this.publishers$ = af.database.list('publishers');
-
-    this.publishers$.subscribe(console.log);
-
-    this.reports$ = af.database.object('fieldServiceReports/-K_nBy_7UpL11GtYmzxt');
-
-    this.reports$.subscribe(console.log);
-
-  }
-
-  listPush() {
-
-    //this.publishers$.push({firstName: 'TEST'});
-  }
-
-  listRemove() {
-
-    //this.publishers$.remove(this.firstPublisher);
-
-  }
-
-  listUpdate() {
-
-    //this.publishers$.update(this.firstPublisher, {firstName: 'TEST'});
-
-  }
-
-  objUpdate() {
-
-    //this.reports$.update({comments: ''});
-  }
 }

@@ -15,4 +15,24 @@ export class FieldServiceReport {
         public publisherId:string) {
             
         }
+
+        static fromJson({$key, reportMonthYear, placements, videoShowings, hours, returnVisits, totalDifferentBibleStudiesConducted, comments, publisherId}): FieldServiceReport {
+
+            return new FieldServiceReport(
+                $key,
+                reportMonthYear,
+                placements,
+                videoShowings,
+                hours,
+                returnVisits,
+                totalDifferentBibleStudiesConducted,
+                comments,
+                publisherId);
+
+        }
+
+        static fromJsonArray(json : any[]): FieldServiceReport[] {
+            
+            return json.map(FieldServiceReport.fromJson);
+        }
 }

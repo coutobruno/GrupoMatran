@@ -8,24 +8,35 @@ import { firebaseConfig } from "../environments/firebase.config";
 import { AngularFireModule } from "angularfire2/index";
 import { HomeComponent } from './home/home.component';
 import { FieldServiceReportsService } from './shared/model/field-service-reports.service';
+import { PublishersService } from './shared/model/publishers.service';
+import { AuthService } from './shared/security/auth.service';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import { FieldServiceReportsListComponent } from './field-service-reports-list/field-service-reports-list.component';
+import { RouterModule } from "@angular/router";
+import { routerConfig } from "./router.config";
+import { TopMenuComponent } from './top-menu/top-menu.component';
+import { LoginComponent } from './login/login.component';
+import { PublishersComponent } from './publishers/publishers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    FieldServiceReportsListComponent
+    FieldServiceReportsListComponent,
+    TopMenuComponent,
+    LoginComponent,
+    PublishersComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routerConfig)
   ],
-  providers: [FieldServiceReportsService],
+  providers: [FieldServiceReportsService, PublishersService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

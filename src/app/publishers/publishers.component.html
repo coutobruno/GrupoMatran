@@ -1,0 +1,14 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <td>Nome</td>
+      <td>Apelido</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let publisher of (publishers$ | async)">
+      <td>{{publisher.firstName}}</td>
+      <td>{{publisher.lastName}}</td>
+    </tr>
+  </tbody>
+</table>

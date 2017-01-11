@@ -9,7 +9,8 @@ import { FieldServiceReport } from "../shared/model/field-service-report";
 })
 export class HomeComponent implements OnInit {
 
-fieldServiceReports: FieldServiceReport[];
+allFieldServiceReports: FieldServiceReport[];
+filtered: FieldServiceReport[];
 
 
   constructor(private fieldServiceReportsService: FieldServiceReportsService) {
@@ -19,10 +20,14 @@ fieldServiceReports: FieldServiceReport[];
 
   ngOnInit() {
     this.fieldServiceReportsService.findAllFieldServiceReports()
-        .do(console.log)
         .subscribe(
-          fieldServiceReports => this.fieldServiceReports = fieldServiceReports
+          fieldServiceReports => this.allFieldServiceReports = this.filtered= fieldServiceReports
         );
+  }
+
+  search(search:string) {
+
+    this.filtered = this.allFieldServiceReports.filter(fieldServiceReport => fieldServiceReport.publisherId.includes(search));
   }
 
 }
