@@ -13,21 +13,21 @@ import { AuthService } from './shared/security/auth.service';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
-import { FieldServiceReportsListComponent } from './field-service-reports-list/field-service-reports-list.component';
 import { RouterModule } from "@angular/router";
 import { routerConfig } from "./router.config";
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { LoginComponent } from './login/login.component';
 import { PublishersComponent } from './publishers/publishers.component';
+import { FieldServiceReportsComponent } from './field-service-reports/field-service-reports.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    FieldServiceReportsListComponent,
     TopMenuComponent,
     LoginComponent,
-    PublishersComponent
+    PublishersComponent,
+    FieldServiceReportsComponent
   ],
   imports: [
     BrowserModule,
