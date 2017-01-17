@@ -1,3 +1,42 @@
-<p>
-  field-service-reports works!
-</p>
+<div class="page-header">
+  <h1>Relatórios <small>({{filtered?.length}})</small></h1>
+</div>
+
+<table class="table table-condensed">
+  <thead>
+    <tr class="active">
+      <td><input placeholder="Publicador" (keyup)="search(input.value)" #input></td>
+      <td>Mês</td>
+      <td>Publicações</td>
+      <td>Vídeos apresentados</td>
+      <td>Horas</td>
+      <td>Revisitas</td>
+      <td>Estudos bíblicos</td>
+      <td>Observações</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let fieldServiceReport of filtered">
+      <td>{{fieldServiceReport.publisherId}}</td>
+      <td>{{fieldServiceReport.reportMonthYear}}</td>
+      <td>{{fieldServiceReport.placements}}</td>
+      <td>{{fieldServiceReport.videoShowings}}</td>
+      <td>{{fieldServiceReport.hours}}</td>
+      <td>{{fieldServiceReport.returnVisits}}</td>
+      <td>{{fieldServiceReport.totalDifferentBibleStudiesConducted}}</td>
+      <td>{{fieldServiceReport.comments}}</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr class="info">
+      <td>Totais</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tfoot>
+</table>

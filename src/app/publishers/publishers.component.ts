@@ -18,7 +18,8 @@ export class PublishersComponent implements OnInit {
 
   ngOnInit() {
     
-    this.publishers$ = this.publishersService.findAllPublishers();
+    this.publishers$ = this.publishersService.findAllPublishers()
+        .do(console.log);
   }
 
 }
